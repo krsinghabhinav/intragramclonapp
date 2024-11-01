@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intragramclonapp/view/screens/bottomnav/bottomnav.dart';
 import 'package:intragramclonapp/view/screens/login/signup_screen.dart';
 import 'package:intragramclonapp/view/widgets/uihelper.dart';
 
@@ -62,7 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             UiHelper.CustomTextButton(
               text: 'Log in',
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => Bottomnav()));
+              },
             ),
             SizedBox(
               height: 15,
