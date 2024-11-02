@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intragramclonapp/view/screens/messages/messages_screen.dart';
 import 'package:intragramclonapp/view/widgets/uihelper.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: UiHelper.CustomImage(imgUrl: "IGTV.png"),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MessagesScreen()));
+            },
             icon: UiHelper.CustomImage(imgUrl: "Messanger.png"),
           )
         ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intragramclonapp/view/screens/heart/following_screen.dart';
+import 'package:intragramclonapp/view/screens/heart/you_screen.dart';
 
 class HeartScreen extends StatefulWidget {
   const HeartScreen({super.key});
@@ -10,8 +12,26 @@ class HeartScreen extends StatefulWidget {
 class _HeartScreenState extends State<HeartScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('HHeart')),
-    );
+    return DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+                indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.tab,
+                tabs: [
+                  Tab(
+                    text: 'Following',
+                  ),
+                  Tab(
+                    text: 'You',
+                  ),
+                ]),
+          ),
+          body: TabBarView(children: [
+            FollowingScreen(),
+            YouScreen(),
+          ]),
+        ));
   }
 }
