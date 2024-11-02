@@ -62,11 +62,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: [
                             CircleAvatar(
-                              radius: 44,
+                              radius: 42,
                               backgroundColor:
                                   const Color.fromARGB(255, 250, 135, 27),
                               child: CircleAvatar(
-                                radius: 42,
+                                radius: 40,
                                 foregroundImage: AssetImage(
                                     storyImage[index]['img'].toString()),
                               ),

@@ -30,17 +30,19 @@ class _PostPageState extends State<PostPage> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-      itemBuilder: (context, index) {
-        return Container(
-          height: 124,
-          width: 124,
-          child: Image.asset(postimage[index]['img'].toString()),
-        );
-      },
-      itemCount: postimage.length,
+    return Scaffold(
+      body: GridView.builder(
+        gridDelegate:
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemBuilder: (context, index) {
+          return Container(
+            height: 124,
+            width: 124,
+            child: Image.asset(postimage[index]['img'].toString()),
+          );
+        },
+        itemCount: postimage.length,
+      ),
     );
   }
 }

@@ -71,21 +71,36 @@ class _FollowingScreenState extends State<FollowingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: 5),
-        child: ListView.builder(
-            itemCount: followContent.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                leading: ClipOval(
-                    child: Image.asset(followContent[index]['img'].toString())),
-                title: Text(followContent[index]['name'].toString(),
-                    style: TextStyle(fontSize: 14)),
-                trailing: Image.asset(
-                  followContent[index]['img'].toString(),
-                ),
-              );
-            }),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 8, left: 15),
+              child: Text(
+                "All Following", // Your desired text
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 236,
+              child: ListView.builder(
+                  itemCount: followContent.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      leading: ClipOval(
+                          child: Image.asset(
+                              followContent[index]['img'].toString())),
+                      title: Text(followContent[index]['name'].toString(),
+                          style: TextStyle(fontSize: 14)),
+                      trailing: Image.asset(
+                        followContent[index]['img'].toString(),
+                      ),
+                    );
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }
